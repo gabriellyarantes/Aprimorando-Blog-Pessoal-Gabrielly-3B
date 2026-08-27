@@ -9,29 +9,69 @@ header {
     margin: 0 auto;
         padding: 10px;
         }
+/* Grade compacta */
 main {
-    background-color: rgb(243, 243, 231);
-    color: black;
-    margin: auto;
-    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;                  /* Diminui a distância entre os cards */
+    padding: 10px;
     max-width: 1000px;
-           }
-article {
-   display: flex; 
-   flex-direction: column;
-   align-items: center;
-   text-align: center;
-   justify-content: center;
-   border: 1px solid rgb(213, 213, 203);
-   padding: 16px;
-   box-sizing: border-box;
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-   width: calc(33.333% - 32px); 
-   margin: 16px;
+    margin: 0 auto;
+    align-items: start;         /* Impede que cards menores fiquem esticados e vazios */
 }
-img{
-    width: 80px;
-    height: 80px;
+
+/* Card ajustado */
+article {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(213, 213, 203);
+    padding: 12px;              /* Padding interno mais enxuto */
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: #fff;     /* Fundo branco destaca o card e fecha espaços soltos */
+    border-radius: 8px;
+}
+
+/* Imagem proporcional */
+img {
+    width: 100%;
+    height: 140px;              /* Altura compacta */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Compactando textos e listas internas */
+article h2 {
+    font-size: 1rem;
+    margin: 8px 0 4px 0;
+}
+
+article h3 {
+    font-size: 0.85rem;
+    margin: 0 0 6px 0;
+}
+
+article p, article ul {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: 4px 0;
+    text-align: left;           /* Alinhamento à esquerda evita espaços em branco estranhos */
+    padding-left: 16px;
+}
+
+/* Limite de altura para cards muito longos com rolagem interna */
+article div {
+    width: 100%;
+    max-height: 350px;
+    overflow-y: auto;          /* Adiciona barra de rolagem se o texto for gigante */
+    padding-right: 4px;
+}
+img {
+    width: 100%;            /* Faz a imagem ocupar toda a largura do card */
+    height: 180px;          /* Ajusta uma altura proporcional */
+    object-fit: cover;      /* Recorta o excesso sem esticar ou distorcer a foto */
+    border-radius: 6px;     /* Opcional: deixa os cantos da imagem levemente arredondados */
 }
 .artigo-autor{
             font-weight: bold;
